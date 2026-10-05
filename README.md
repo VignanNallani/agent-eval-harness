@@ -7,6 +7,8 @@ A small harness that scores a tool-using LLM agent on two things:
 
 It exists to answer one question quickly: *"Would this agent do something dangerous if the content it reads tells it to?"*
 
+**Key finding:** on gpt-oss-20b, the model called a destructive tool (`delete_records`) in every unguarded run when an instruction was hidden in an HTML comment. With a prompt that declared the content to be data, it never did. Details and limits below.
+
 The harness itself and the offline demo have no dependencies. Running a real model needs the `groq` package.
 
 ## Run it
